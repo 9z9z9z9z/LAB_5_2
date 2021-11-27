@@ -46,11 +46,21 @@ void print(double** args, int lines, int posts) {
 //===============================================================================
 int main() {
 	srand(time(0));
-	int N, M;
-	std::cout << "Input number of lines, please" << std::endl;
-	std::cin >> N;
-	std::cout << "Input number of posts, please" << std::endl;
-	std::cin >> M;
+	int N = -1, M = -1;
+	while (N < 1) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5);
+		std::cout << "Input number of lines, please" << std::endl;
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+		std::cin >> N;
+		system("cls");
+	}
+	while (M < 1) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 6);
+		std::cout << "Input number of posts, please" << std::endl;
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+		std::cin >> M;
+		system("cls");
+	}
 	double** A = (double**)calloc(N, sizeof(double*));
 	for (int i = 0; i < N; i++) A[i] = (double*)calloc(M, sizeof(double));
 	int W[2];
